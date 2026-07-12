@@ -1,0 +1,14 @@
+/* MainLayout.css */
+.main-layout {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px; /* Adjust as needed */
+    background-color: #f4f4f4; /* Adjust as needed */
+}
+
+.dashboard {
+    flex-grow: 1;
+    padding: 20px; /* Adjust as needed */
+}

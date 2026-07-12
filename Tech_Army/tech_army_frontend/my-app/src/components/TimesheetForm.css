@@ -1,0 +1,245 @@
+/* General container styling */
+.container1 {
+  padding: 50px;
+  width:1100px; /* Adjusting for sidebar width */
+  background-color: #f0f0f0;
+  margin-left: 250px;
+  box-sizing: border-box;
+}
+
+/* Calendar header styling */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0F1035;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 990px;
+}
+
+/* Button styling */
+.button {
+  padding: 12px 20px;
+  border: none;
+  color: white;
+  background-color: #7fc7d9;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+.buttonz {
+  padding: 12px 20px;
+  border: none;
+  color: white;
+  background-color: #365483;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #365486;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+/* Add button styling */
+.add-button {
+  background-color: #365486;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 22px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.add-button:hover {
+  background-color: #4a5b8d;
+}
+
+/* Calendar grid styling */
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+/* Calendar day styling */
+.calendar-day {
+  text-align: center;
+  padding: 15px;
+  background-color: #7fc7d9;
+  border-radius: 8px;
+  color: #333;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 20px;
+  text-align: center;
+}
+.popup-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 10;
+  
+}
+
+.popup-message h3 {
+  margin: 0;
+}
+
+.popup-message p {
+  margin: 5px 0;
+}
+
+.popup-message button {
+  margin-top: 10px;
+}
+
+.button2 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+
+.calendar-day:hover {
+  background-color: #bce0d8;
+  transform: scale(1.05);
+}
+
+/* Circle styling */
+.circle {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #365486;
+  color: white;
+  line-height: 45px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.circle:hover {
+  background-color: #4a5b8d;
+  transform: scale(1.1);
+}
+
+/* Form popup styling */
+.form-popup, .submitted-data {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  max-width: 450px;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #333;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  
+}
+
+/* Cancel button styling */
+.cancel-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cancel-button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+/* Button1 styling */
+.buttonee {
+  padding: 12px 20px;
+  border: none;
+  color: white;
+  background-color: rgb(22, 200, 22);
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.buttonee:hover {
+  background-color: #1b7c1b;
+  transform: translateY(-2px);
+}
+
+.buttonee:active {
+  transform: translateY(1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container1 {
+    margin-left: 0;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .calendar {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .calendar-header, .form-popup, .submitted-data {
+    width: 95%;
+  }
+
+  .button, .buttonee, .cancel-button {
+    width: 100%;
+    padding: 12px 0;
+  }
+  
+  .add-button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+.form-popup label{
+  color: #0F1035;
+}

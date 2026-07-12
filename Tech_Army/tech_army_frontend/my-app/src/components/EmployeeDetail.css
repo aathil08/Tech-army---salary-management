@@ -1,0 +1,59 @@
+body{
+    background-color: #DCF2F1;
+}
+
+   
+
+
+.employee-detail {
+    background-color:#0F1035; /* Set background color to white */
+    color:White; /* Set text color for better readability */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 6px 5px #7f7d7f;
+    width: 700px;
+    margin: 3% auto;
+    font-family: Arial, sans-serif;
+    align-content: center;
+    align-items: center;
+    height:400px;
+    margin-left: 200px;
+    /*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=c741fc&c2=9e6cc1&gt=l&gd=dtl
+*/
+
+
+}
+
+.employee-detail h1 {
+    color: white; /* Using the specified color */
+}
+
+.employee-detail p {
+    color:#7FC7D9; /* Using the specified color */
+    font-size: 18px;
+}
+
+.employee-detail .back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+/*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=a8188c&c2=7960f1&gt=r&gd=dtl
+*/
+background: #365486;
+background: radial-gradient(at left top,#DCF2F1, #7FC7D9);
+
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.employee-detail .back-link:hover {
+    background-color:#7FC7D9; /* Using the specified color */
+}

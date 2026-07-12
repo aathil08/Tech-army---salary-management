@@ -1,0 +1,54 @@
+.salary-container {
+  background-color: #0a0f1f;
+  color: #cce7ff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.salary-container h2 {
+  margin-bottom: 20px;
+  color: #6ec1ff;
+}
+
+.salary-container label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.salary-container select,
+.salary-container input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.salary-container button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.salary-container button[type="submit"] {
+  background-color: #6ec1ff;
+  color: black;
+}
+
+.salary-container button[type="button"] {
+  background-color: #223b61;
+  color: white;
+}
+
+.message {
+  margin-top: 10px;
+  font-size: 14px;
+}

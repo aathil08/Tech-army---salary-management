@@ -1,0 +1,25 @@
+.leave-days-container  h1 {
+    text-align: center;
+    color:#7FC7D9;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.leave-days-container {
+    background-color: #0F1035;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    height: 150px;
+    margin: 150px auto;
+    font-family: 'Arial', sans-serif;
+    margin-left: 200px;
+    
+}
+.leave-days-container  p {
+    text-align: center;
+    color:white;
+    font-size: 20px;
+    margin-bottom: 20px;
+}

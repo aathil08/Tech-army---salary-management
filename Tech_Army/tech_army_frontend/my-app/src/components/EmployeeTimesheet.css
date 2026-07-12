@@ -1,0 +1,216 @@
+.employee-timesheet {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 6px 5px rgba(0, 0, 0, 0.1);
+    width: 95%; /* Increase the overall container width */
+    max-width: 1900px; /* Increase the max-width to allow for a larger table */
+    margin: 200px auto;
+    font-family: Arial, sans-serif;
+    position: relative;
+    z-index: 10;
+}
+
+.employee-timesheet h1 {
+    color: #0F1035;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.search-bar {
+    margin-left: 70px;
+    width: 900px; /* Reduce the width */
+    margin-right: 200px;
+    max-width: 1080px;
+}
+.search-bar input {
+    
+    width: 200px; /* Reduce the width */
+    
+}
+.employee-timesheet table {
+    width: 100%; /* Ensure the table takes up the full width of its container */
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 5px;
+}
+
+.employee-timesheet table, .employee-timesheet th, .employee-timesheet td {
+    border: 1px solid #ddd;
+}
+
+.employee-timesheet th {
+    padding: 12px; /* Slightly increase padding for better spacing */
+    text-align: center;
+    color: white;
+    background-color: #0F1035;
+    font-weight: bold;
+}
+
+.employee-timesheet td {
+    padding: 12px; /* Slightly increase padding for better spacing */
+    text-align: center;
+}
+
+.employee-timesheet .button-group {
+    display: flex;
+    justify-content: space-around;
+}
+
+.employee-timesheet .approve-button {
+    background-color: #28a745; /* Green color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.employee-timesheet .approve-button:hover {
+    background-color: #218838; /* Darker green */
+}
+
+.employee-timesheet .reject-button {
+    background-color: #dc3545; /* Red color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.employee-timesheet .add-comment-button {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.employee-timesheet .add-comment-button:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+.employee-timesheet .submit-button {
+    background-color: #28a745; /* Green color */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.employee-timesheet .submit-button:hover {
+    background-color: #218838; /* Darker green */
+}
+
+.employee-timesheet input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.employee-timesheet .reject-button:hover {
+    background-color: #c82333; /* Darker red */
+}
+
+.employee-timesheet .back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: radial-gradient(at left top, #DCF2F1, #7FC7D9);
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.employee-timesheet .back-link:hover {
+    background-color: #7FC7D9;
+}
+
+.button-group {
+    background-color: #28a745;
+    width: 100px;
+}
+
+.button-group:hover {
+    background-color: #28a746df;
+}
+
+.button-group1 {
+    background-color: red;
+    width: 100px;
+}
+
+.button-group1:hover {
+    background-color: rgba(255, 0, 0, 0.686);
+}
+
+.pagination-controls{
+    margin-left: 350px;
+}
+.pagination-controlsz{
+    margin-left: 350px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .employee-timesheet {
+        padding: 15px;
+    }
+
+    .employee-timesheet table {
+        font-size: 14px;
+    }
+
+    .employee-timesheet .button-group {
+        flex-direction: column;
+    }
+
+    .employee-timesheet .approve-button, 
+    .employee-timesheet .reject-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .employee-timesheet .approve-button:last-child, 
+    .employee-timesheet .reject-button:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .employee-timesheet h1 {
+        font-size: 1.5rem;
+    }
+
+    .employee-timesheet table {
+        font-size: 12px;
+    }
+
+    .employee-timesheet .back-link {
+        font-size: 0.9rem;
+    }
+}
+
+/* For larger screens */
+@media (min-width: 769px) {
+    .employee-timesheet {
+        margin-left: 250px; /* Adjust according to the sidebar width */
+    }
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .employee-timesheet {
+        margin: 0 auto;
+    }
+}

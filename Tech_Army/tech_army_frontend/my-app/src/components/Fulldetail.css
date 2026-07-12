@@ -1,0 +1,305 @@
+.fulldetail {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 6px 5px rgba(0, 0, 0, 0.1);
+    width: 1070px;
+    max-width: 1200px;
+    margin-left: 300px; /* Adjust the margin as needed */
+    font-family: Arial, sans-serif;
+    position: relative; /* Add this property */
+    z-index: 10; /* Ensure this value is higher than the sidebar's z-index */
+}
+.fulldetail .pagination-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    max-width: 1200px;
+}
+
+.fulldetail .pagination-button {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+}
+
+.fulldetail .pagination-button:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+.fulldetail .pagination-button:disabled {
+    background-color: #c0c0c0; /* Gray color */
+    cursor: not-allowed;
+}
+.fulldetail .pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.fulldetail .pagination-button {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+}
+
+.fulldetail .pagination-button:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+.fulldetail .pagination-button:disabled {
+    background-color: #c0c0c0; /* Gray color */
+    cursor: not-allowed;
+}
+
+.fulldetail .page-numbers {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.fulldetail .page-number {
+    background-color: #f1f1f1;
+    color: #007bff;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0 5px;
+}
+
+.fulldetail .page-number.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.fulldetail .page-number:hover {
+    background-color: #ddd;
+}
+.fulldetail td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.fulldetail .pagination-controlss {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.fulldetail .pagination-button {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+}
+
+.fulldetail .pagination-button:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+.fulldetail .page-numbers {
+    display: flex;
+    align-items: center;
+}
+
+.fulldetail .page-number {
+    background-color: #f8f9fa; /* Light gray */
+    border: 1px solid #ddd;
+    color: #007bff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.fulldetail .page-number.active {
+    background-color: #007bff; /* Blue color */
+    color: white;
+}
+
+.fulldetail .page-number:hover {
+    background-color: #e9ecef; /* Light gray */
+}
+
+
+.fulldetail h2 {
+    color: #0F1035;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.fulldetail table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 5px;
+}
+
+.fulldetail table, .fulldetail th, .fulldetail td {
+    border: 1px solid #ddd;
+}
+
+.fulldetail th {
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background-color: #0F1035;
+    font-weight: bold;
+}
+
+.fulldetail td {
+    padding: 10px;
+    text-align: center;
+}
+
+.fulldetail .button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.fulldetail .approve-button {
+    background-color: #28a745; /* Green color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+}
+
+.fulldetail .approve-button:hover {
+    background-color: #218838; /* Darker green */
+}
+
+.fulldetail .reject-button {
+    background-color: #dc3545; /* Red color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+}
+
+.fulldetail .reject-button:hover {
+    background-color: #c82333; /* Darker red */
+}
+
+.fulldetail .add-comment-button {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+}
+
+.fulldetail .add-comment-button:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+.fulldetail .submit-button {
+    background-color: #28a745; /* Green color */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+}
+
+.fulldetail .submit-button:hover {
+    background-color: #218838; /* Darker green */
+}
+
+.fulldetail input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.fulldetail .back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #365486;
+    background: radial-gradient(at left top,#DCF2F1, #7FC7D9);
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.fulldetail .back-link:hover {
+    background-color: #1a1a1a; /* Darker background on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .fulldetail {
+        padding: 15px;
+    }
+
+    .fulldetail table {
+        font-size: 14px;
+    }
+
+    .fulldetail .button-group {
+        flex-direction: column;
+    }
+
+    .fulldetail .approve-button, 
+    .fulldetail .reject-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .fulldetail .approve-button:last-child, 
+    .fulldetail .reject-button:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .fulldetail h2 {
+        font-size: 1.5rem;
+    }
+
+    .fulldetail table {
+        font-size: 12px;
+    }
+
+    .fulldetail .back-link {
+        font-size: 0.9rem;
+    }
+}

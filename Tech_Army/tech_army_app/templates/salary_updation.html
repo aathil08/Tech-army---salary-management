@@ -1,0 +1,19 @@
+<h2>Salary Updation History</h2>
+<table border="1">
+  <tr>
+    <th>Employee</th>
+    <th>Role</th>
+    <th>Previous Salary</th>
+    <th>Updated Salary</th>
+    <th>Date</th>
+  </tr>
+  {% for record in history %}
+    <tr>
+      <td>{{ record.employee.user.get_full_name }}</td>
+      <td>{{ record.employee.role }}</td>
+      <td>{{ record.previous_salary }}</td>
+      <td>{{ record.updated_salary }}</td>
+      <td>{{ record.updated_at|date:"Y-m-d" }}</td>
+    </tr>
+  {% endfor %}
+</table>

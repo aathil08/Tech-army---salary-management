@@ -1,0 +1,183 @@
+/* src/Dashboard.css */
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.dashboard {
+    background-color: #DCF2F1;
+    color: #0F1035;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 10px 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 250px);
+    height: 100vh;
+    box-sizing: border-box;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 250px;
+    z-index: 1;
+}
+
+.dashboard h1 {
+    color: #0F1035;
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard .employee-list {
+    background-color: white;
+    width: 100%;
+    max-width: 900px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 10px 5px 3px rgba(0, 0, 0, 0.1);
+    margin: 100px auto;
+    overflow: hidden;
+}
+
+.dashboard .employee-list h2 {
+    color: white;
+    margin-bottom: 15px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    background-color: #0F1035;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dashboard .employee-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.dashboard .employee-list ul li {
+    margin-bottom: 10px;
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard .employee-list ul li span {
+    color: #0C134F;
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/* Pagination styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #538392;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination button:disabled {
+    background-color: #b0bec5;
+    cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: #365486;
+}
+
+.pagination span {
+    margin: 0 10px;
+    font-size: 1rem;
+    color: #0F1035;
+}
+
+.dashboard .employee-list p {
+    font-size: 1.1rem;
+    color: #7FC7D9;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.dashboard .employee-list ul li span:hover {
+    background-color: #365486;
+    color: #DCF2F1;
+    transform: scale(0.98);
+}
+
+/* Active state */
+.dashboard .employee-list ul li span:active {
+    background-color: #DCF2F1;
+    color: #0C134F;
+    transform: scale(0.98);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard {
+        margin-left: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .dashboard h1 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .dashboard .employee-list {
+        padding: 10px;
+    }
+
+    .dashboard .employee-list h2 {
+        font-size: 1.2em;
+        padding: 8px;
+    }
+
+    .dashboard .employee-list ul li span {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard h1 {
+        font-size: 1.2em;
+    }
+
+    .dashboard .employee-list {
+        padding: 8px;
+    }
+
+    .dashboard .employee-list h2 {
+        font-size: 1em;
+        padding: 6px;
+    }
+
+    .dashboard .employee-list ul li span {
+        padding: 8px;
+    }
+}

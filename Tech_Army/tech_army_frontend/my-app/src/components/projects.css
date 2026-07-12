@@ -1,0 +1,128 @@
+/* src/projects.css */
+
+/* Container for the form */
+.form-container {
+    background-color: #0F1035;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 500px;
+    margin-left: 200px;
+}
+
+/* Header styles */
+.form-header {
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form element styles */
+.form-element {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-left: 70px;
+}
+
+/* Label styles */
+.form-element label {
+    font-weight: bold;
+    color: #7FC7D9;
+}
+
+/* Input and select styles */
+.form-element input,
+.form-element select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: white; /* Ensure background is white */
+    color: #333; /* Optional: ensure text color is readable */
+}
+
+/* Button styles */
+.submit-button {
+    margin-left: 30px;
+    background: #365486;
+    background: radial-gradient(at left top, #DCF2F1, #7FC7D9);
+    color: black;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #365486;
+}
+
+.submit-button:disabled {
+    background-color: white; /* Change disabled button color to a light gray */
+    cursor: not-allowed;
+}
+
+/* Error and success messages */
+.message {
+    text-align: center;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.success {
+    color: #4caf50;
+}
+
+.error {
+    color: #f44336;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    .form-header {
+        font-size: 24px;
+    }
+
+    .form-element input,
+    .form-element select {
+        font-size: 14px;
+    }
+
+    .submit-button {
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 10px;
+    }
+
+    .form-header {
+        font-size: 20px;
+    }
+
+    .form-element input,
+    .form-element select {
+        font-size: 12px;
+    }
+
+    .submit-button {
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+}

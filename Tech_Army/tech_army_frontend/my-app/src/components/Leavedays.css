@@ -1,0 +1,38 @@
+/* Leavedays.css */
+
+.leave-days-container {
+    background-color: #0F1035;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    height: 150px;
+    margin: 150px auto;
+    font-family: 'Arial', sans-serif;
+    margin-left: 200px;
+    
+}
+
+.leave-days-header {
+    text-align: center;
+    color:white;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.leave-days-content {
+    text-align: center;
+    color:white;
+    font-size: 18px;
+}
+
+.leave-days-count {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+h2{
+    text-align: center;
+    color:#7FC7D9;
+}
