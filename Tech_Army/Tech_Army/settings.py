@@ -1,11 +1,13 @@
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
+import os
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-1z&b63!p7qkskfq7uz!86+m%qnv%6b4-^2dh=+n&2lh6cmq=ue'
-DEBUG = True
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-1z&b63!p7qkskfq7uz!86+m%qnv%6b4-^2dh=+n&2lh6cmq=ue')
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '.onrender.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -22,6 +24,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -51,12 +54,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Tech_Army.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+DATABASE_URL = os.environ.get('DATABASE_URL')
+if DATABASE_URL:
+    DATABASES = {
+        'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -80,6 +89,8 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -94,5 +105,5 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = os.environ.get('CORS_ALLOW_ALL', 'True') == 'True'
 APPEND_SLASH = False
