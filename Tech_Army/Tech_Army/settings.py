@@ -1,7 +1,10 @@
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 import os
-import dj_database_url
+try:
+    import dj_database_url
+except ImportError:
+    dj_database_url = None
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -55,7 +58,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Tech_Army.wsgi.application'
 
 DATABASE_URL = os.environ.get('DATABASE_URL')
-if DATABASE_URL:
+if DATABASE_URL and dj_database_url:
     DATABASES = {
         'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
     }
