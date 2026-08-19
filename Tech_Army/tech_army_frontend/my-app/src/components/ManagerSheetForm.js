@@ -1,3 +1,4 @@
+import config from '../config';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -16,7 +17,7 @@ const ManagerSheetForm = () => {
     useEffect(() => {
         const fetchTeamLeaders = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/leads/');
+                const response = await axios.get(`${config.API_URL}leads/`);
                 setTeamLeaders(response.data);
 
                 // Set the selected team leader if available
@@ -34,7 +35,7 @@ const ManagerSheetForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/manager/', {
+            const response = await axios.post(`${config.API_URL}manager/`, {
                 project_name: projectName,
                 dead_line: deadLine,
                 team_leader: selectedTeamLeader,

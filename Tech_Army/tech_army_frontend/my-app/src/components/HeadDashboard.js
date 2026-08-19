@@ -1,3 +1,4 @@
+import config from '../config';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -27,7 +28,7 @@ const HeadDashboard = () => {
 
         const fetchEmployees = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/employee/');
+                const response = await axios.get(`${config.API_URL}employee/`);
                 setEmployees(response.data);
                 console.log('Employees:', response.data); // Debugging line
             } catch (error) {

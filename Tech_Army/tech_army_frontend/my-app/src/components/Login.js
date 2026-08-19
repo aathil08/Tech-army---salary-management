@@ -1,3 +1,4 @@
+import config from '../config';
 // src/components/Login.js
 import React, { useState } from 'react';
 import axios from 'axios';
@@ -21,7 +22,7 @@ const Login = ({ onLogin }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/login/', { userid, password });
+      const response = await axios.post(`${config.API_URL}login/`, { userid, password });
       const { userid: userId, personstatus: personStatus, redirect_url } = response.data;
 
       // Store the userid and personstatus in local storage

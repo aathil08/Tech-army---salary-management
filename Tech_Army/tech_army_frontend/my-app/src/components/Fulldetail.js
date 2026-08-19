@@ -1,3 +1,4 @@
+import config from '../config';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Fulldetail.css'; // Import the CSS file
@@ -11,7 +12,7 @@ const Fulldetail = ({ empId }) => {
 
     useEffect(() => {
         // Fetch timesheets for the specific employee
-        axios.get(`http://127.0.0.1:8000/api/timesheet/`, {
+        axios.get(`${config.API_URL}timesheet/`, {
             params: {
                 user_id: empId
             }

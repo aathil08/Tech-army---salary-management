@@ -1,3 +1,4 @@
+import config from '../config';
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
@@ -8,7 +9,7 @@ const EmployeeDetail = () => {
     const [employee, setEmployee] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/employee/?employee_id=${emp_id}`)
+        axios.get(`${config.API_URL}employee/?employee_id=${emp_id}`)
             .then(response => {
                 if (Array.isArray(response.data) && response.data.length > 0) {
                     setEmployee(response.data[0]);

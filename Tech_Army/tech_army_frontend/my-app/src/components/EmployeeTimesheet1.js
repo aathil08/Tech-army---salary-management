@@ -1,3 +1,4 @@
+import config from '../config';
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
@@ -20,7 +21,7 @@ const EmployeeTimesheet = () => {
             setPersonstatus(storedPersonstatus);
         }
 
-        axios.get(`http://127.0.0.1:8000/api/employee/?employee_id=${emp_id}`)
+        axios.get(`${config.API_URL}employee/?employee_id=${emp_id}`)
             .then(response => {
                 setEmployee(response.data);
             })
@@ -28,7 +29,7 @@ const EmployeeTimesheet = () => {
                 console.error('Error fetching employee details:', error);
             });
 
-        axios.get(`http://127.0.0.1:8000/api/timesheet/?employee=${emp_id}`)
+        axios.get(`${config.API_URL}timesheet/?employee=${emp_id}`)
             .then(response => {
                 setTimesheets(response.data);
             })
@@ -36,7 +37,7 @@ const EmployeeTimesheet = () => {
                 console.error('Error fetching timesheets:', error);
             });
 
-        axios.get(`http://127.0.0.1:8000/api/user/status/`)
+        axios.get(`${config.API_URL}user/status/`)
             .then(response => {
                 setPersonstatus(response.data.person_status);
             })
@@ -46,7 +47,7 @@ const EmployeeTimesheet = () => {
     }, [emp_id]);
 
     const approveTimesheet = (timesheetId) => {
-        axios.post(`http://127.0.0.1:8000/api/timesheet/${timesheetId}/approve/`)
+        axios.post(`${config.API_URL}timesheet/${timesheetId}/approve/`)
             .then(response => {
                 setTimesheets(timesheets.map(timesheet =>
                     timesheet.id === timesheetId ? { ...timesheet, lead_approval: 'Approved' } : timesheet
@@ -58,7 +59,7 @@ const EmployeeTimesheet = () => {
     };
 
     const rejectTimesheet = (timesheetId) => {
-        axios.post(`http://127.0.0.1:8000/api/timesheet/${timesheetId}/reject/`)
+        axios.post(`${config.API_URL}timesheet/${timesheetId}/reject/`)
             .then(response => {
                 setTimesheets(timesheets.map(timesheet =>
                     timesheet.id === timesheetId ? { ...timesheet, lead_approval: 'Rejected' } : timesheet
@@ -70,7 +71,7 @@ const EmployeeTimesheet = () => {
     };
 
     const approveTimesheetByManager = (timesheetId) => {
-        axios.post(`http://127.0.0.1:8000/api/timesheet/${timesheetId}/manager_approve/`)
+        axios.post(`${config.API_URL}timesheet/${timesheetId}/manager_approve/`)
             .then(response => {
                 setTimesheets(timesheets.map(timesheet =>
                     timesheet.id === timesheetId ? { ...timesheet, manager_approval: 'Approved' } : timesheet
@@ -82,7 +83,7 @@ const EmployeeTimesheet = () => {
     };
 
     const rejectTimesheetByManager = (timesheetId) => {
-        axios.post(`http://127.0.0.1:8000/api/timesheet/${timesheetId}/manager_reject/`)
+        axios.post(`${config.API_URL}timesheet/${timesheetId}/manager_reject/`)
             .then(response => {
                 setTimesheets(timesheets.map(timesheet =>
                     timesheet.id === timesheetId ? { ...timesheet, manager_approval: 'Rejected' } : timesheet

@@ -1,3 +1,4 @@
+import config from '../config';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -33,7 +34,7 @@ const Dashboard3 = () => {
 
         const fetchUserName = async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/api/user/${storedUserid}/`);
+                const response = await axios.get(`${config.API_URL}user/${storedUserid}/`);
                 setUserName(response.data.name);
             } catch (error) {
                 console.error('Error fetching user details:', error);
@@ -43,8 +44,8 @@ const Dashboard3 = () => {
         const fetchEmployees = async () => {
             try {
                 const [employeesResponse, modulesResponse] = await Promise.all([
-                    axios.get('http://127.0.0.1:8000/api/employee/'),
-                    axios.get('http://127.0.0.1:8000/api/teamleader/')
+                    axios.get(`${config.API_URL}employee/`),
+                    axios.get(`${config.API_URL}teamleader/`)
                 ]);
 
                 // Extract assigned user IDs from teamleader modules

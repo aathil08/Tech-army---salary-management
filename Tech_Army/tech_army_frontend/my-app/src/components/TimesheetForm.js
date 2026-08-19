@@ -1,3 +1,4 @@
+import config from '../config';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './TimesheetForm.css';
@@ -30,7 +31,7 @@ const TimesheetForm = () => {
   useEffect(() => {
     const fetchTimesheets = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/timesheet/');
+        const response = await axios.get(`${config.API_URL}timesheet/`);
         setTimesheets(response.data);
       } catch (error) {
         console.error('Error fetching timesheets:', error);
@@ -39,7 +40,7 @@ const TimesheetForm = () => {
 
     const fetchProjectsAndModules = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/teamleader/');
+        const response = await axios.get(`${config.API_URL}teamleader/`);
         console.log("Team Leader Data:", response.data);
 
         if (Array.isArray(response.data)) {
@@ -58,7 +59,7 @@ const TimesheetForm = () => {
 
     const fetchTeams = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/employee/');
+        const response = await axios.get(`${config.API_URL}employee/`);
         console.log("Employee Data:", response.data);
 
         const teamNames = response.data.map(item => item.team_name || '');
@@ -107,7 +108,7 @@ const TimesheetForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/timesheet/add/', formData);
+      const response = await axios.post(`${config.API_URL}timesheet/add/`, formData);
       setSubmittedData(response.data);
       setShowForm(false);
       setTimesheets([...timesheets, response.data]);

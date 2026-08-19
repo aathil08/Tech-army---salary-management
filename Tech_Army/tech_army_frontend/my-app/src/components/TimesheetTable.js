@@ -1,3 +1,4 @@
+import config from '../config';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './TimesheetTable.css';
@@ -15,7 +16,7 @@ const TimesheetTable = () => {
       try {
         const token = localStorage.getItem('token');
         const userId = localStorage.getItem('userId'); // Assuming you store the user ID in localStorage
-        const response = await axios.get(`http://127.0.0.1:8000/api/timesheet/?user=${userId}`, {
+        const response = await axios.get(`${config.API_URL}timesheet/?user=${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

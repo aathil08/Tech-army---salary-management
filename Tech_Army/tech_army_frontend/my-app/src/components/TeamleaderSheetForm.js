@@ -1,3 +1,4 @@
+import config from '../config';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -21,11 +22,11 @@ const TeamleaderSheetForm = () => {
         const fetchData = async () => {
             try {
                 // Fetch the manager sheets
-                const sheetsResponse = await axios.get('http://127.0.0.1:8000/api/manager/');
+                const sheetsResponse = await axios.get(`${config.API_URL}manager/`);
                 setManagerSheets(sheetsResponse.data);
 
                 // Fetch the assigned modules
-                const modulesResponse = await axios.get('http://127.0.0.1:8000/api/teamleader/');
+                const modulesResponse = await axios.get(`${config.API_URL}teamleader/`);
                 const assigned = modulesResponse.data.map(item => item.module_name);
                 setAssignedModules(assigned);
             } catch (error) {
@@ -55,7 +56,7 @@ const TeamleaderSheetForm = () => {
             }
 
             // Submit the form data to the backend
-            await axios.post('http://127.0.0.1:8000/api/teamleader/', formData);
+            await axios.post(`${config.API_URL}teamleader/`, formData);
             alert('Form submitted successfully.');
             setFormData({
                 project_name: '',
@@ -64,7 +65,7 @@ const TeamleaderSheetForm = () => {
             });
             setError('');
             // Optionally, refetch the assigned modules to update the state
-            const modulesResponse = await axios.get('http://127.0.0.1:8000/api/teamleader/');
+            const modulesResponse = await axios.get(`${config.API_URL}teamleader/`);
             const assigned = modulesResponse.data.map(item => item.module_name);
             setAssignedModules(assigned);
         } catch (err) {

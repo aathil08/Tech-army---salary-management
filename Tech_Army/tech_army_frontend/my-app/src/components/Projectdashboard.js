@@ -1,3 +1,4 @@
+import config from '../config';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -29,7 +30,7 @@ const Dashboard3 = () => {
 
         const fetchUserName = async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/api/user/${storedUserid}/`);
+                const response = await axios.get(`${config.API_URL}user/${storedUserid}/`);
                 setUserName(response.data.name);
             } catch (error) {
                 console.error('Error fetching user details:', error);
@@ -38,7 +39,7 @@ const Dashboard3 = () => {
 
         const fetchEmployees = async () => {
             try {
-                const employeesResponse = await axios.get('http://127.0.0.1:8000/api/employee/');
+                const employeesResponse = await axios.get(`${config.API_URL}employee/`);
                 const filteredEmployees = employeesResponse.data
                     .filter(employee => employee.personstatus === 'Lead');
                 setEmployees(filteredEmployees);

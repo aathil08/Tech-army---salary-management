@@ -1,3 +1,4 @@
+import config from '../config';
 import React, { useState, useEffect } from 'react';
 import './salary.css';
 
@@ -15,7 +16,7 @@ const CalculateSalary = () => {
         if (role) {
             const fetchUserOptions = async () => {
                 try {
-                    const response = await fetch(`http://127.0.0.1:8000/api/${role.toLowerCase()}s/`);
+                    const response = await fetch(`${config.API_URL}${role.toLowerCase()}s/`);
                     if (response.ok) {
                         const data = await response.json();
                         console.log('Fetched user options:', data); // Debug log
@@ -54,7 +55,7 @@ const CalculateSalary = () => {
         setSalary(null);
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/api/calculate-salary/${userId}/`);
+            const response = await fetch(`${config.API_URL}calculate-salary/${userId}/`);
             if (response.ok) {
                 const data = await response.json();
                 setSalary(data.total_salary);

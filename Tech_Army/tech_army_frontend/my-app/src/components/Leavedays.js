@@ -1,3 +1,4 @@
+import config from '../config';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Leavedays.css'; // Import the CSS file
@@ -22,7 +23,7 @@ const Leavedays = () => {
             const fetchData = async () => {
                 try {
                     // Fetch timesheet data
-                    const timesheetResponse = await axios.get('http://127.0.0.1:8000/api/timesheet/user_timesheets/', {
+                    const timesheetResponse = await axios.get(`${config.API_URL}timesheet/user_timesheets/`, {
                         params: { user_id: userid }
                     });
 
@@ -54,7 +55,7 @@ const Leavedays = () => {
                     setLeaveDays(totalLeaveDays);
 
                     // Fetch user details using the `userid` state
-                    const userResponse = await axios.get(`http://127.0.0.1:8000/api/user/${userid}/`);
+                    const userResponse = await axios.get(`${config.API_URL}user/${userid}/`);
                     console.log('User API Response:', userResponse.data);
                     setUserName(userResponse.data.name);
 
