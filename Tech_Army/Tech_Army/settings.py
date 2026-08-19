@@ -106,6 +106,8 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+    'https://tech-army-salary-management-backend.onrender.com',
+    'https://tech-army-frontend.onrender.com',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = os.environ.get('CORS_ALLOW_ALL', 'True') == 'True'
